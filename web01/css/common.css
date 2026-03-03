@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+* { 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'ShillaG', 'Noto Sans KR', sans-serif; 
+    font-weight: 300; 
+    color: #333;
+    line-height: 1.5;
+}
+
+a { 
+    text-decoration: none; 
+    color: #333; 
+    transition: 0.3s; 
+}
+
+.wrap {
+    width: 100%; 
+    min-width: 1280px; 
+    position: relative;
+}
+
+.container { 
+    width: 1280px; 
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+#hd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 999;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+#hd .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    height: 100%;
+}
+
+.log img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+.gnb .menu {
+    display: flex;
+    gap: 30px;
+}
+
+.gnb .menu > li {
+    position: relative;
+}
+
+.gnb .menu > li > a.dp1 {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 25px 10px;
+    color: #333333;
+}
+
+.gnb .menu > li:hover > a.dp1 {
+    color: #004d40;
+}
+
+.gnb .sub {
+    position: absolute;
+    top: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 10px 10px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.gnb .menu > li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gnb .sub li a {
+    display: block;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+
+.gnb .sub li a:hover {
+    color: #ffab40;
+    font-weight: bold;
+}
+
+/* 상단 우측 메뉴 (TNB) */
+.tnb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tnb a {
+    font-size: 14px;
+    color: #555;
+}
+
+.tnb a:hover {
+    color: #0367A6;
+}
+
+.content {
+    margin-top: 80px;
+    min-height: 800px;
+}
+
+#ft { 
+    background-color: #D9BF73;
+    color: #fff;
+    padding-bottom: 40px;
+}
+
+#relation {
+    margin-bottom: 20px;
+}
+
+#relation ul {
+    display: flex;
+    width: 100%;
+}
+
+#relation ul li {
+    flex: 1;
+    position: relative;
+}
+
+#relation ul li label {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.2);
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+#ra11, #ra12, #ra13, #ra14 { 
+    display: none; 
+}
+
+.sel {
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.sel a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.sel a:hover {
+    background-color: #f1f1f1;
+}
+
+#ra11:checked ~ #sel1,
+#ra12:checked ~ #sel2,
+#ra13:checked ~ #sel3,
+#ra14:checked ~ #sel4 {
+    max-height: 200px;
+}
+
+#banner_bar {
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#banner_bar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#banner_bar img {
+    max-height: 40px; 
+    width: auto;
+}
+
+#fnb {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+#fnb a {
+    color: #666;
+    font-size: 14px;
+}
+
+#fnb a:hover {
+    color: #fff;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+#top_btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #0367A6;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+#top_btn:hover {
+    background-color: #D9BF73;
+}

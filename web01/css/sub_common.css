@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+/* 배경 및 공통 설정 */
+body {
+    background-color: #f4f6f9; /* 배경색을 아주 연한 블루그레이로 변경 */
+    color: #333;
+}
+
+.content {
+    margin-top: 80px; /* 헤더 높이만큼 */
+    min-height: 800px;
+}
+
+/* 상단 비주얼 (배경 이미지 영역) */
+#vs1 {
+    width: 100%;
+    height: 400px;
+    background-image: url("../images/sub_01.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 이미지 어둡게 처리 (글자 잘 보이게) */
+#vs1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.vs_tit {
+    font-size: 50px;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.vs_sub_tit {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+/* 레이아웃 구조 (Float 제거 -> Flex 변경) */
+.content_wrap {
+    width: 1280px; /* 메인과 동일한 폭 */
+    margin: 50px auto;
+    display: flex; /* Flexbox 사용 */
+    gap: 40px; /* 왼쪽 메뉴와 본문 사이 간격 */
+    align-items: flex-start;
+}
+
+/* 왼쪽 사이드바 (LNB) */
+#left_bar {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    flex-shrink: 0; /* 너비 줄어듦 방지 */
+}
+
+.lnb_tit_box {
+    background-color: #0367A6; /* 메인 컬러 */
+    padding: 30px 0;
+    text-align: center;
+}
+
+.lnb_tit {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#lnb ul {
+    padding: 10px 0;
+}
+
+#lnb li a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+#lnb li:last-child a {
+    border-bottom: none;
+}
+
+#lnb li a:hover, #lnb li a.active {
+    background-color: #f0f7fb;
+    color: #0367A6;
+    font-weight: bold;
+    padding-left: 30px; /* 호버 시 살짝 밀리는 효과 */
+}
+
+/* 오른쪽 콘텐츠 영역 */
+.content_art {
+    flex-grow: 1; /* 남은 공간 다 차지 */
+    width: calc(100% - 290px); /* IE 등 대비 안전장치 */
+}
+
+/* 페이지 타이틀 & 빵부스러기(Breadcrumb) */
+.page_tit_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 30px;
+    background-color: transparent; /* 배경색 제거 */
+}
+
+.page_tit {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+}
+
+.breadcrumb a {
+    color: #888;
+}
+
+/* 탭 버튼 스타일 (상단 큰 탭) */
+.tab_ra { display: none; } /* 라디오 버튼 숨김 */
+
+.btn_box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none; /* 그림자 제거 */
+}
+
+.btn_box .tab_btn {
+    display: block;
+    padding: 15px 40px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0; /* 위쪽만 둥글게 */
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    transition: 0.3s;
+    text-align: center;
+    min-width: 120px;
+}
+
+.btn_box .tab_btn:hover {
+    background-color: #eef5f9;
+    color: #0367A6;
+}
+
+/* 선택된 탭 스타일 */
+#tab_ra1:checked ~ .btn_box #tab_btn1,
+#tab_ra2:checked ~ .btn_box #tab_btn2,
+#tab_ra3:checked ~ .btn_box #tab_btn3,
+#tab_ra4:checked ~ .btn_box #tab_btn4,
+#tab_ra5:checked ~ .btn_box #tab_btn5 {
+    background-color: #0367A6;
+    color: #fff;
+    border-color: #0367A6;
+}
+
+/* 콘텐츠 박스 (내용물) */
+.content_box .art {
+    display: none; /* 기본 숨김 */
+    animation: fadeEffect 0.5s; /* 부드럽게 나타나기 */
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* 탭 선택 시 해당 콘텐츠 보이기 */
+#tab_ra1:checked ~ .content_box #art1,
+#tab_ra2:checked ~ .content_box #art2,
+#tab_ra3:checked ~ .content_box #art3,
+#tab_ra4:checked ~ .content_box #art4,
+#tab_ra5:checked ~ .content_box #art5 {
+    display: block;
+}
+
+/* 본문 내부 스타일 */
+.sub_vs img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.item_tit {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid #0367A6;
+    line-height: 1;
+}
+
+/* 테이블 스타일 */
+.table {
+    width: 100%;
+    border-top: 2px solid #333;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table tr th {
+    width: 150px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-weight: 600;
+    padding-left: 45px; /* 아이콘 공간 확보 */
+}
+
+.table tr td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+/* 테이블 아이콘 */
+.cate_tit.addr { background-image: url("../images/f-i-1.png"); background-size: 20px; }
+.cate_tit.tel { background-image: url("../images/f-i-2.png"); background-size: 20px; }
+
+.art p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 40px;
+    padding: 0 10px;
+}
+
+/* 하단 2차 탭 (교통/주변관광 등) */
+.info_box {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.info { display: none; }
+
+.info_btn_box {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.info_btn_box label {
+    flex: 1; /* 균등 분할 */
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: #888;
+    border-bottom: 3px solid transparent; /* 아래 선 미리 확보 */
+    transition: 0.3s;
+}
+
+.info_btn_box label:hover {
+    color: #0367A6;
+}
+
+/* 하단 탭 선택 스타일 (반복되는 선택자 그룹화) */
+#info11:checked ~ .info_btn_box #info_btn11,
+#info12:checked ~ .info_btn_box #info_btn12,
+#info13:checked ~ .info_btn_box #info_btn13,
+#info14:checked ~ .info_btn_box #info_btn14,
+#info21:checked ~ .info_btn_box #info_btn21,
+#info22:checked ~ .info_btn_box #info_btn22,
+#info23:checked ~ .info_btn_box #info_btn23,
+#info24:checked ~ .info_btn_box #info_btn24,
+#info31:checked ~ .info_btn_box #info_btn31,
+#info32:checked ~ .info_btn_box #info_btn32,
+#info33:checked ~ .info_btn_box #info_btn33,
+#info34:checked ~ .info_btn_box #info_btn34 {
+    color: #0367A6;
+    font-weight: bold;
+    border-bottom: 3px solid #0367A6;
+}
+
+/* 하단 탭 내용 표시 (HTML 구조상 어쩔 수 없이 길게 작성) */
+.info_content_box { border: none; } /* 기존 테두리 제거 */
+.info_content_box li { display: none; margin-top: 20px; }
+
+/* 1번 탭 내용 */
+#info11:checked ~ .info_content_box .info_box1,
+#info12:checked ~ .info_content_box .info_box2,
+#info13:checked ~ .info_content_box .info_box3,
+#info14:checked ~ .info_content_box .info_box4 { display: block; }
+
+/* 2번 탭 내용 */
+#info21:checked ~ .info_content_box .info_box1,
+#info22:checked ~ .info_content_box .info_box2,
+#info23:checked ~ .info_content_box .info_box3,
+#info24:checked ~ .info_content_box .info_box4 { display: block; }
+
+/* 3번 탭 내용 */
+#info31:checked ~ .info_content_box .info_box1,
+#info32:checked ~ .info_content_box .info_box2,
+#info33:checked ~ .info_content_box .info_box3,
+#info34:checked ~ .info_content_box .info_box4 { display: block; }
+
+.info_content_wrap {
+    min-height: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: #666;
+}

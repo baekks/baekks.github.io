@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+    <!-- css link 모음 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font1.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/join.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- header영역 -->
+        <header id="hd">
+            <div class="container">
+                <a href="/" class="log"><img src="./images/logo.png" alt="경주문화관광 로고"></a>
+                <nav class="gnb">
+                    <ul class="menu">
+                        <li>
+                            <a href="sub1_1.html" class="dp1">역사/문화</a>
+                            <ul class="sub">
+                                <li><a href="sub1_1.html">세계문화유산</a></li>
+                                <li><a href="sub1_2.html">국가유산</a></li>
+                                <li><a href="#">경주 역사</a></li>
+                                <li><a href="#">경주 설화</a></li>
+                                <li><a href="#">경주 신라왕</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="sub2_1.html" class="dp1">경주 여행</a>
+                            <ul class="sub">
+                                <li><a href="sub2_1.html">보문관광단지</a></li>
+                                <li><a href="sub2_2.html">경주시내</a></li>
+                                <li><a href="#">체험과 레져</a></li>
+                                <li><a href="#">숙박</a></li>
+                                <li><a href="#">음식</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="sub3_1.html" class="dp1">문화 축제</a>
+                            <ul class="sub">
+                                <li><a href="sub3_1.html">신라도자기축제</a></li>
+                                <li><a href="sub3_2.html">신라문화제</a></li>
+                                <li><a href="#">보문호반힐링걷기</a></li>
+                                <li><a href="#">신라소리축제에밀레전</a></li>
+                                <li><a href="#">해룡일출축제</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="sub4_1.html" class="dp1">여행가이드</a>
+                            <ul class="sub">
+                                <li><a href="sub4_1.html">여행도우미</a></li>
+                                <li><a href="sub4_2.html">교통정보</a></li>
+                                <li><a href="#">짐보관</a></li>
+                                <li><a href="#">관광지도</a></li>
+                                <li><a href="#">경주로ON</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="sub5_1.html" class="dp1">커뮤니티</a>
+                            <ul class="sub">
+                                <li><a href="sub5_1.html">공지사항</a></li>
+                                <li><a href="sub5_2.html">여행후기</a></li>
+                                <li><a href="#">여긴뭘해야하나</a></li>
+                                <li><a href="#">무물보</a></li>
+                                <li><a href="#">불편신고</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="tnb">
+                    <img src="./images/002.png" alt="신라">
+                    <a href="login.html">로그인</a>
+                    <a href="join.html">회원가입</a>
+                    <a href="contact_us.html">Contact US</a>
+                    <img src="./images/001.png" alt="첨성대">
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main 영역 -->
+        <main id="main">
+            <div class="page" id="join_page">
+                <div class="page_wrap">
+                    <div class="join_page">
+                        <h3>회원가입</h3>
+                        <form action="" id="join_form">
+                            <div class="join_agreement">
+                                <div class="label_box_agree">이용약관동의<span>*</span></div>
+                                <div class="input_inner">
+                                    <div class="check">
+                                        <ul class="check_all">
+                                            <li>
+                                                <input type="checkbox" id="all_agree" onclick="chk()">
+                                                <label for="all_agree">전체 동의합니다.</label>
+                                            </li>
+                                        </ul>
+                                        <ul class="check_choice">
+                                            <li>
+                                                <input type="checkbox" id="check_agree1" class="sub_agree" onclick="sub_chk(1)">
+                                                <label for="check_agree1"><span>본인은 만 14세 이상입니다.</span>(필수)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check_agree2" class="sub_agree" onclick="sub_chk(2)">
+                                                <label for="check_agree2"><span>이용약관 동의</span>(필수)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check_agree3" class="sub_agree" onclick="sub_chk(3)">
+                                                <label for="check_agree3"><span>개인정보 수집 · 이용 동의</span>(필수)</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="check_agree4" class="sub_agree" onclick="sub_chk(4)">
+                                                <label for="check_agree4"><span>개인정보 수집 · 이용 동의</span>(선택)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form_row">
+                                <div class="label_box"><label for="user_email">이메일</label></div>
+                                <div class="input_inner">
+                                    <input type="text" name="" id="user_email" placeholder="E-mail을 입력하세요.">
+                                    <button type="button" class="btn_inline">중복확인</button>
+                                </div>
+                            </div>
+                            <div class="form_row">
+                                <div class="label_box"><label for="user_pw">비밀번호</label></div>
+                                <div class="input_inner">
+                                    <input type="text" name="" id="user_pw" placeholder="Password를 입력하세요.">
+                                </div>
+                            </div>
+                            <div class="form_row">
+                                <div class="label_box"><label for="user_pwck">비밀번호 확인</label></div>
+                                <div class="input_inner">
+                                    <input type="text" name="" id="user_pwck" placeholder="Password를 한번 더 입력하세요.">
+                                </div>
+                            </div>
+                            <div class="form_row">
+                                <div class="label_box"><label for="user_name">이름</label></div>
+                                <div class="input_inner">
+                                    <input type="text" id="user_name" placeholder="Name을 입력하세요.">
+                                </div>
+                            </div>
+                            <div class="form_row">
+                                <div class="label_box"><label for="user_phone">연락처</label></div>
+                                <div class="input_inner">
+                                    <input type="text" name="" id="user_phone" placeholder="숫자만 입력하세요.">
+                                </div>
+                            </div>
+                            <div class="btn_con">
+                                <button type="submit" class="btn_join" onclick="fnc()">가입하기</button>
+                            </div>
+                        </form>
+                        
+                        <script>
+                            function chk() {
+                                let checkAll = document.getElementById("all_agree");
+                                let checkboxes = document.querySelectorAll('.sub_agree');
+                                let isChecked = checkAll.checked;
+                                for (let checkbox of checkboxes) {
+                                    checkbox.checked = isChecked;
+                                }
+                            }
+
+                            function sub_chk(a) {
+                                let subAgrees = document.querySelectorAll(".sub_agree");
+                                let checkAll = document.getElementById("all_agree");
+                                let allChecked = true;
+                                
+                                subAgrees.forEach((el) => {
+                                    if(!el.checked) allChecked = false;
+                                });
+                                
+                                checkAll.checked = allChecked;
+                            }
+
+                            function fnc() {
+                                let agree1 = document.getElementById("check_agree1");
+                                let agree2 = document.getElementById("check_agree2");
+                                let agree3 = document.getElementById("check_agree3");
+
+                                if (!agree1.checked) {
+                                    alert("만 14세 이상인지 확인해 주세요.");
+                                    agree1.focus();
+                                    return false;
+                                }
+                                if (!agree2.checked) {
+                                    alert("이용약관에 동의해 주세요.");
+                                    agree2.focus();
+                                    return false;
+                                }
+                                if (!agree3.checked) {
+                                    alert("개인정보처리 방침(필수)에 동의해 주세요");
+                                    agree3.focus();
+                                    return false;
+                                }
+
+                                alert("회원가입을 진행합니다.");
+                                location.href = "login.html";
+                                return false; // 폼 제출 방지 (테스트용)
+                            }    
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer 영역 -->
+        <footer id="ft">
+            <div class="container">
+                <nav id="relation">
+                    <ul>
+                        <li>
+                            <input type="radio" name="sel" id="ra11">
+                            <label for="ra11">관광사업소</label>
+                            <div class="sel" id="sel1">
+                                <a href="">기획예산담당관</a>
+                                <a href="">선택2</a>
+                                <a href="">선택3</a>
+                                <a href="">선택4</a>
+                                <a href="">선택5</a>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" name="sel" id="ra12">
+                            <label for="ra12">면/동</label>
+                            <div class="sel" id="sel2">
+                                <a href="">기획예산담당관</a>
+                                <a href="">선택2</a>
+                                <a href="">선택3</a>
+                                <a href="">선택4</a>
+                                <a href="">선택5</a>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" name="sel" id="ra13">
+                            <label for="ra13">시/군청</label>
+                            <div class="sel" id="sel3">
+                                <a href="">기획예산담당관</a>
+                                <a href="">선택2</a>
+                                <a href="">선택3</a>
+                                <a href="">선택4</a>
+                                <a href="">선택5</a>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" name="sel" id="ra14">
+                            <label for="ra14">패밀리사이트</label>
+                            <div class="sel" id="sel4">
+                                <a href="">기획예산담당관</a>
+                                <a href="">선택2</a>
+                                <a href="">선택3</a>
+                                <a href="">선택4</a>
+                                <a href="">선택5</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <nav id="banner_bar">
+                    <ul>
+                        <li>
+                            <a href="https://www.laiis.go.kr/lips/mlo/lcl/organizationList.do" target="_blank">
+                                <img src="./images/ban2.png" alt="경주 엑스포 대공원">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.greendaero.go.kr/local/geojesi" target="_blank">
+                                <img src="./images/ban3.png" alt="경상북도 문화관광공사">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.budongsan24.kr/" target="_blank">
+                                <img src="./images/ban1.png" alt="경주교촌마을">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://gis.gyeongnam.go.kr/" target="_blank">
+                                <img src="./images/ban4.png" alt="정부24">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.gov.kr/portal/main" target="_blank">
+                                <img src="./images/ban5.png" alt="복지로">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.gov.kr/portal/main" target="_blank">
+                                <img src="./images/ban6.gif" alt="통합신고센터">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav id="fnb">
+                    <a href="privacy.html">개인정보처리방침</a>
+                    <a href="#">이메일무단수집거부</a>
+                    <a href="#">저작권정책</a>
+                    <a href="#">홈페이지 의견접수</a>
+                    <a href="#" download>뷰어 다운로드</a>
+                </nav>
+                <div class="copyright">
+                    <p class="addr">(53257) 거제시 계룡로 125 (고현동) / 대표전화 : 055)639-3000</p>
+                    <p class="copy">Copyright ⓒ 2019 GEOJE CITY. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

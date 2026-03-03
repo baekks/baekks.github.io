@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'InkPen';
+    src: url('../fonts/thefaceshap_inklipquid.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ShillaM';
+    src: url('../fonts/Shilla_CultureM.ttf') format('truetype');
+    font-weight: 100 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ShillaB';
+    src: url('../fonts/Shilla_CultureB.ttf') format('truetype');
+    font-weight: 500 900;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'ShillaG';
+    src: url('../fonts/Shilla_Gothic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zenkuren';
+    src: url('../fonts/ZenKurenaido_Regular.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+
+
