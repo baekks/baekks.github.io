@@ -44,7 +44,10 @@ h1{font-size:30px;font-weight:800;line-height:1.2;letter-spacing:-.03em}
 .toc a.on{color:var(--ink);font-weight:700}
 .reach{display:grid;gap:4px;font-size:13px;color:var(--sub);border-top:1px solid var(--line);padding-top:16px}
 .reach a:hover{color:var(--accent)}
-.print{margin-top:auto;background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:11px;border-radius:6px}
+.sidebar-actions{display:grid;gap:8px;margin-top:auto}
+.portfolio-download{display:block;text-align:center;padding:10px;border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-size:14px;font-weight:600}
+.portfolio-download:hover{background:var(--accent);color:#fff}
+.print{background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:11px;border-radius:6px}
 .print:hover{background:var(--accent)}
 
 /* 소개 */
@@ -181,6 +184,11 @@ td:nth-child(2){font-weight:600}
   .toc,.reach{padding-top:10px}
   .toc a{padding:3px 0}
 }
+@media screen and (min-width:861px) and (max-height:780px){
+  aside{padding:20px 28px;gap:8px}
+  .avatar{width:60px;height:74px}
+  .toc a{padding:1px 0}
+}
 @media screen and (max-width:1100px){
   .proj{grid-template-columns:240px 1fr;gap:20px}
   .job{grid-template-columns:160px 1fr}
@@ -218,7 +226,7 @@ td:nth-child(2){font-weight:600}
   .layout{display:block;max-width:none}
   aside{position:static;height:auto;display:grid;grid-template-columns:90px auto 1fr auto;padding:0 0 18px;background:none}
   .avatar{width:84px;height:104px}
-  .toc,.print,.tabs,.close,.open,.more,.thumbs span{display:none}
+  .toc,.sidebar-actions,.print,.tabs,.close,.open,.more,.thumbs span{display:none}
   .reach{border:0;padding:0;align-content:start}
   main{padding:0}
   section{padding:22px 0}
